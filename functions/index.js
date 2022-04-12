@@ -13,7 +13,7 @@ const firebaseConfig = {
 
 const app = admin.initializeApp(firebaseConfig)
 
-exports.checkUpdates = functions.region(`${process.env.REGION}`).https.onRequest(async (request, response) => {
+exports.checkUpdates = functions.region('asia-southeast2').https.onRequest(async (request, response) => {
   functions.logger.info('Request: ', request.query, {structuredData: true})
   try{
     const db = admin.firestore()
